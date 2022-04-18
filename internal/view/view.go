@@ -11,7 +11,7 @@ type Model struct {
 }
 
 func New(name, title string) *Model {
-	return &Model{Name: name}
+	return &Model{Name: name, Title: title}
 }
 
 func SetupRoutes(app *fiber.App) {
@@ -25,6 +25,6 @@ func SetupRoutes(app *fiber.App) {
 }
 
 func render(ctx *fiber.Ctx, m *Model) error {
-	return ctx.Render(m.Name, fiber.Map{"View": m}, "layouts/main")
+	return ctx.Render(m.Name, fiber.Map{"Title": m.Title}, "layouts/main")
 
 }
