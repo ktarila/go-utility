@@ -1,4 +1,5 @@
 node_modules/
+/tmp/
 dist/
 go-stimulus
 .idea/
@@ -6,6 +7,7 @@ go-stimulus
 public/
 yarn.lock
 go.sum
+/go.sum
 /**/*.log
 
 /**/*.swp
