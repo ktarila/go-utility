@@ -1,0 +1,70 @@
+<transition enter-class="opacity-0" enter-active-class="ease-out transition-medium" enter-to-class="opacity-100" leave-class="opacity-100" leave-active-class="ease-out transition-medium" leave-to-class="opacity-0">
+    <div data-sidebar-target="drawertransition" class="z-10 fixed hidden transition-opacity">
+        <div data-action="click->sidebar#resetOpen" class="absolute bg-black opacity-50" tabindex="0"></div>
+    </div>
+</transition>
+<div data-sidebar-target="draweraside" id="scroll-container" class="font-medium shadow-md bg-white w-64 absolute" style="height: 100vh; overflow: auto; ">
+    <div class="pt-4 pb-2 px-6">
+        <a href="#!">
+            <div class="flex items-center justify-between">
+                <div class="grow ml-3">
+                    <p class="text-sm font-semibold text-blue-600">Utility</p>
+                </div>
+                <button class="mr-2 focus:outline-none text-normal" aria-label="Open Menu" data-action="click->sidebar#toggleSidebar">
+                    <i id="hambuger-icon" class="transition-all duration-500 ease-in-out">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-8 w-8" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                        </svg>
+                    </i>
+                </button>
+            </div>
+        </a>
+    </div>
+    <hr class="my-2">
+    <ul class="relative px-1">
+        <li class="relative">
+            <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out" href="/reduce-pdf" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                <i class="fa-solid fa-file-pdf mr-3"></i>
+                <span>Reduce PDF</span>
+            </a>
+        </li>
+
+                <li class="relative">
+            <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out" href="/convert-image" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                <i class="fa-solid fa-images mr-3"></i>
+                <span>Image Convert</span>
+            </a>
+        </li>
+    </ul>
+    <!-- <div class="border-b flex items-center flex-wrap text-sm overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out" data-action="click->sidebar#showTree" data-sidebar-target="navTree">
+        <div class=" w-full flex justify-between items-center py-4 px-6 cursor-pointer">
+            <span class="flex items-center cursor-pointer nav-tree">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg> Collapsable </span>
+            <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+        <div class="w-full bg-gray-100 text-gray-900 hidden">
+            <a href="#" class="px-6 py-2 flex items-center hover:bg-yellow-50 cursor-pointer"><i class="fas fa-money-bill-wave-alt mr-3"></i>Link One
+            </a>
+            <a href="#" class="px-6 py-2 flex items-center hover:bg-yellow-50 cursor-pointer">
+                <i class="fas fa-plus-square mr-3"></i> Link Two
+            </a>
+            <a href="#" class="px-6 py-2 flex items-center hover:bg-yellow-50 cursor-pointer">
+                <i class="fas fa-minus-square mr-3"></i> Link Three
+            </a>
+        </div>
+    </div> -->
+    <div class="text-center bottom-0 fixed w-full">
+        <hr class="m-0">
+        <p class="py-2 text-sm text-gray-700">Patrick Kenekayoro</p>
+    </div>
+    <div class="last block" style="height: 200px"></div>
+</div>

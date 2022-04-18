@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>{{.Title}}</title>
-    <script src="static/public/bundle.js" async></script>
-    <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Patrick Kenekayoro">
+    <meta name="description" content="Utiltiy tasks">
+    <meta name="keywords" content="utility,pdf">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <title>
+        {{.Title}}
+    </title>
+    <link href="static/css/app.css" rel="stylesheet">
+    </link>
+    <script async="" src="static/js/app.js">
+    </script>
+    </meta>
 </head>
-<body>
-{{template "partials/header" .}}
 
-{{content}}
-
-{{template "partials/footer" .}}
+<body class="bg-gray-50 font-sans antialiased leading-normal tracking-normal">
+    <div class="w-full flex">
+        <div data-controller="sidebar">
+            <button class="mr-2 focus:outline-none text-normal fixed left-0 top-0" aria-label="Open Menu" data-action="click->sidebar#toggleSidebar">
+                <i id="hambuger-icon" class="transition-all duration-500 ease-in-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-8 w-8" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                </i>
+            </button>
+            {{template "partials/sidebar" .}}
+        </div>
+        <div data-controller="main" class="">
+            <div class="top"></div>
+            <div class="p-10">
+                {{template "partials/header" .}}
+                {{content}}
+                {{template "partials/footer" .}}
+            </div>
+           
+        </div>
 </body>
+
 </html>

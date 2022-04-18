@@ -1,8 +1,14 @@
 node_modules/
-public/bundle.js
+dist/
 go-stimulus
 .idea/
 .DS_Store
 public/
 yarn.lock
 go.sum
+/**/*.log
+
+/**/*.swp
+/tags
+/tags.lock
+/tags.temp

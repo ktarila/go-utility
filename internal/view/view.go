@@ -1,14 +1,13 @@
 package view
 
 import (
-	"github.com/gofiber/fiber"
-	"log"
+	"github.com/gofiber/fiber/v2"
 )
 
 type Model struct {
-	Name string
+	Name  string
 	Title string
-	Data map[string]interface{}
+	Data  map[string]interface{}
 }
 
 func New(name, title string) *Model {
@@ -16,15 +15,16 @@ func New(name, title string) *Model {
 }
 
 func SetupRoutes(app *fiber.App) {
-	app.Static("/static", "../webapp")
+	app.Static("/static", "./webapp/dist")
 
 	app.Get("/", Home)
-	app.Get("/login", Login)
+	app.Post("/reduce-pdf", ReducePdf)
+	app.Get("/reduce-pdf", ReducePdf)
+	app.Get("/convert-image", ImageConvert)
+	app.Post("/convert-image", ImageConvert)
 }
 
-func render(ctx *fiber.Ctx, m *Model) {
-	err:=ctx.Render(m.Name, fiber.Map{"View":m},  "layouts/main")
-	if err != nil {
-		log.Printf("[ERROR][VIEW] error rendering a view %s. Error: %s", m.Name, err)
-	}
+func render(ctx *fiber.Ctx, m *Model) error {
+	return ctx.Render(m.Name, fiber.Map{"View": m}, "layouts/main")
+
 }

@@ -9,31 +9,10 @@ Golang backend is using [Fiber - Express inspired web framework written in Go](h
 serve HTML, and other static content such as Javascript and CSS. HTML can be rendered in server-side using 
 [HTML Template Engine ](https://github.com/gofiber/template) supported by Fiber.
 
-### Structure of the project
-#### Front-end: inside a folder 'webapp' with subdirectories
-   - **css** - contains the stylesheet files before bundling
-   - **html** - contains all the - mostly HTML files for pages, layouts, and partials. Go backend can return server-side
-    rendered HTML using html template engine
-   - **public** - contains the bundled javascript and styles and used as a output directory of webpack build. The HTML 
-   files loads the bundled static content via static URL as shown: 
-   ```
-   <script src="static/public/bundle.js" async></script>
-   ```
-   - **src** - contains StimulusJS controllers and front-end Javascript. index.js is the entry point 
-
-#### Back-end:
-   - main.go - is the entry point for the server which configures fiber app, routes for views and static files. It then 
-   starts the web server 
-   - internal - special directory name recognised by the go tool which will prevent one package from being imported by 
-   another unless both share a common ancestor
-   - api - RESTful APIs that returns used by views to either render HTML or return JSON or XML data directly to the web
-   - view - contains routes and handlers to return HTML views (complete page or partial). It uses the go HTML template
-   engine, and a specific layout defined in webapp/html/layouts/main.html 
 
 #### To run the project
 
 ```
-$ git clone git@github.com:narup/go-stimulus.git
 $ cd go-stimulus
 $ go get 
 $ cd webapp
@@ -42,29 +21,3 @@ $ yarn start
 ```
 go to http://localhost:3000
 
-#### For hot reloading of static content run the watch command inside webapp folder
-```
-$ yarn watch 
-```
-
-# References
-
-### Quick go module commands
-
-- go mod init - creates a new module, initializing the go.mod file that describes it.
-- go build - go test, and other package-building commands add new dependencies to go.mod as needed.
-- go list -m all - prints the current module’s dependencies.
-- go get - changes the required version of a dependency (or adds a new dependency).
-- go mod tidy - removes unused dependencies.
-
-### Useful links followed for this project
-- https://github.com/stimulusjs/stimulus-starter
-- https://github.com/bnkamalesh/goapp
-- https://stimulusjs.org
-- https://blog.golang.org/using-go-modules
-- https://github.com/gofiber/fiber
-- https://www.reddit.com/r/golang/comments/a4kzqk/has_anyone_deployed_a_createreactapp_with_go/
-- https://www.sitepoint.com/bundle-static-site-webpack/
-- https://blog.jakoblind.no/css-modules-webpack/
-- http://getskeleton.com/
-- https://flaviocopes.com/package-json-watch/

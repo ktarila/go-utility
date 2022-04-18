@@ -1,0 +1,46 @@
+<div>
+    <div class="lg:flex lg:items-center lg:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Convert Images Types</h2>
+        </div>
+    </div>
+    <div class="block w-full mt-5">
+        <form method="post" action="/convert-image" enctype="multipart/form-data">
+            <div class="flex justify-center">
+                <div class="mb-3 w-96">
+                    <label for="formFile" class="form-label inline-block mb-2 text-gray-700">Choose image to convert*</label>
+                    <input name="fileUpload" class="form-control block w-full  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile" required>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="my-5">
+                    <p class="form-label inline-block mb-2 text-gray-700">Choose output image format</p>
+                    <div class="max-w-sm">
+                        <div class="">
+                            <div class="flex items-center mr-4 mb-4">
+                                <input value="jpeg" id="jpeg" type="radio" name="image_type" class="hidden" checked />
+                                <label for="jpeg" class="flex items-center cursor-pointer ">
+                                    <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+                                    jpeg</label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="">
+                            <div class="flex items-center mr-4 mb-4">
+                                <input value="png" id="png" type="radio" name="image_type" class="hidden" />
+                                <label for="png" class="flex items-center cursor-pointer ">
+                                    <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+                                    png</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full">
+                <button type="submit" class="font-medium px-4 py-2 bg-blue-700 text-white">Upload and Covert</button>
+            </div>
+        </form>
+    </div>
+</div>
