@@ -103,7 +103,7 @@ func ImageConvert(c *fiber.Ctx) error {
 				c.Set("Content-disposition", "attachment; filename=processed"+newName)
 				return c.SendFile(outfile)
 			} else {
-				log.Fatal("shrink pdf os shell command failed")
+				log.Fatal("convert os shell command failed")
 			}
 		}
 
