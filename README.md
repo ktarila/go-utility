@@ -12,9 +12,10 @@ serve HTML, and other static content such as Javascript and CSS. HTML can be ren
 #### To run the project
 
 ```
-$ cd go-stimulus
 $ go get
+$ cd webapp
 $ yarn install
+$ yarn build
 $ cd ..
 $ air
 ```
