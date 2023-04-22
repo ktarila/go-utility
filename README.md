@@ -1,13 +1,8 @@
-# go-stimulus
+# go-utility
 
-Starter project with [golang](https://golang.org) backend and [Stimulus JS](https://stimulusjs.org) on the front-end.
-StimulusJS, as per their website, is suitable for the applications that have server-side rendered HTML at their core,
-and want to sprinkle Javascript to make them sparkle. This project also uses Webpack to bundle Javascript and CSS,
-and Babel to transpile ES6 code back to vanilla JavaScript so that every environment (e.g. browser) can interpret it.
+Utility App that performs image conversion/ pdf compression in go. Conversion/Compression is done with the OS cli commands, so respective commands need to be installed on the OS
 
-Golang backend is using [Fiber - Express inspired web framework written in Go](https://github.com/gofiber) for APIs,
-serve HTML, and other static content such as Javascript and CSS. HTML can be rendered in server-side using
-[HTML Template Engine ](https://github.com/gofiber/template) supported by Fiber.
+Project uses gofiber (https://github.com/gofiber) and StimulusJS (https://stimulus.hotwired.dev/)
 
 #### To run the project
 
